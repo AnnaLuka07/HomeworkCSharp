@@ -10,7 +10,7 @@ if (a > 99 & a < 1000)
 {
     a = a / 10;
     int temp = a % 10;
-    Console.WriteLine($" -> {temp}");
+    Console.WriteLine($"Вторая цифра этого числа - {temp}");
 }
 else
 {
