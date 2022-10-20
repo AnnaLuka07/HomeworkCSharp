@@ -30,10 +30,10 @@ if (!validateNumber(B))
 }
 else
 {
-    int result = 1;
+    int power = 1;
     for (int i = 0; i < B; i ++)
     {
-        result = result * A;
+        power = power * A;
     }
-    Console.WriteLine($"{A} в степени {B} = {result}");
+    Console.WriteLine($"{A} в степени {B} = {power}");
 }
