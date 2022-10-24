@@ -2,14 +2,14 @@
 // Разделить ввод данных, от расчета данных (Одна функция вводит данные, другая функция подсчитывает количество положительных)
 // Например: 0, 7, 8, -2, -2 -> 2
 
-int Prompt (string message)                      
+int Prompt (string message)                      // функция ввода общего количества (М) чисел.
 {
     Console.WriteLine(message);
     int num = Convert.ToInt32(Console.ReadLine());
     return num;
 }
-
-int[] InputArray(int Length)                      
+ 
+int[] InputArray(int Length)                      // функция запроса набора отдельных чисел для массива и создание массива. 
 {
     int [] array = new int [Length];
     for (int i = 0; i < array.Length; i ++)
@@ -20,7 +20,7 @@ int[] InputArray(int Length)
     return array;
 }
 
-int PositiveNumb(int [] array)                    
+int PositiveNumb(int [] array)                    // функция подсчета положительных чисел в массиве
 {
     int count = 0;
     for (int i = 0; i < array.Length; i ++)
