@@ -69,11 +69,11 @@ ValidatePosition(Matrix, i, j);
 
 
 
-//bool  ValidatePosition (int [,] matr, int i, int j)       // функция проверки нахождения элемента в массиве без вывода на печать. Только рассчет. Не работает...
+//bool  ValidatePosition (int [,] matr, int i, int j)       // функция проверки нахождения элемента в массиве без вывода на печать. Только рассчет.
 //{
 //    int RowLen = matr.GetLength(0);
 //    int ColumnsLen = matr.GetLength(1);
-//    if ( i > 0 & i < RowLen | j > 0 & j < ColumnsLen )
+//    if ( i > 0 & i < RowLen && j > 0 & j < ColumnsLen )
 //    {
 //        return true;
 //    }
