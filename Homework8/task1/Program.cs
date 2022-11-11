@@ -1,13 +1,9 @@
-﻿
+﻿// Задайте двумерный массив. Напишите программу, которая упорядочивает по убыванию элементы каждой строки двумерного массива.
+// Например: 
+// 1 2 5   ->   5 2 1
+// 6 1 8        8 6 1
 
-int Prompt (string message)                          // функция ввода 
-{
-    Console.WriteLine(message);
-    int num = Convert.ToInt32(Console.ReadLine());
-    return num;
-}
-
-void PrintArray (int [,] matr)                         // функция вывода массива на экран
+void PrintArray (int [,] matr)                         
 {
     for (int i = 0; i < matr.GetLength(0); i ++)
     {
@@ -19,7 +15,7 @@ void PrintArray (int [,] matr)                         // функция выв�
     }
 }
 
-void FillArray (int [,] matr)                          // функция заполнения массива
+void FillArray (int [,] matr)                          
 {
     for (int i = 0; i < matr.GetLength(0); i ++)
     {
@@ -30,27 +26,33 @@ void FillArray (int [,] matr)                          // функция зап�
     }
 }
 
-bool  ValidatePosition (int [,] matr, int i, int j)       // функция проверки нахождения элемента в массиве без вывода на печать. Только рассчет. Не работает...
+void SortArray (int [,] matr)
 {
-    int RowLen = matr.GetLength(0);
-    int ColumnsLen = matr.GetLength(1);
-    if ( i > 0 & i < RowLen && j > 0 & j < ColumnsLen )
+    for (int j = 0; j < matr.GetLength(1); j ++)
     {
-        return true;
+        for (int i = 0; i < matr.GetLength(0); i ++)
+        {
+            int max = matr [i,j];
+            for (int k = j+1; k < matr.GetLength(1); k ++)
+            {
+                if (matr [i,k] >= max)
+                {
+                    max = matr [i,k];
+                    int temp = matr [i,j];
+                    matr [i,j] = matr [i,k];
+                    matr [i,k] = temp;
+                } 
+            }
+        }
     }
-    Console.WriteLine("Такого числа нет в массиве");
-    return false;
-}
-
-
-
-int [,] Matrix = new int [5,6];
+} 
+            
+int [,] Matrix = new int [3,7];
 Console.WriteLine("Задан массив: ");
 FillArray(Matrix);
 PrintArray(Matrix);
-int i = Prompt("Введите номер строки, из которой вы хотите узнать число: ");
-int j = Prompt("Введите номер столбца, из которого вы хотите узнать число: ");
-if (ValidatePosition(Matrix, i, j))
-{
-    Console.WriteLine($"Ваше число -> {Matrix[i-1,j-1]}");
-}
+Console.WriteLine("Упорядочим наш массив по убыванию элементов в каждой строке:");
+SortArray(Matrix);
+PrintArray(Matrix);
+
+
