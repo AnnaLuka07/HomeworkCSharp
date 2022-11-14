@@ -28,6 +28,7 @@ int SumNumb (int m, int n)
 
 int M = Prompt("Введите число М: ");
 int N = Prompt("Введите число N: ");
+Console.Write($" --> ");
 Console.WriteLine(SumNumb (M, N));
 
 
